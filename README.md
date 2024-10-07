@@ -1,8 +1,8 @@
----
+## Zenotes README Config:
 
 # Zenotes Frontend
 
-This is the frontend UI configuration of the Zenotes Project done by Abdiel Wilson and the rest of Team Zenote.
+This is the frontend UI configuration of the Zenotes Project, created by Abdiel Wilson and the rest of Team Zenote.
 
 ## Tailwind Configuration
 
@@ -14,53 +14,50 @@ This project utilizes a custom [`tailwind.config.js`](./tailwind.config.js) file
 // tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
-  ],
+  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
-        "primary": "#2B2B2B",
-        "secondary": "#3B3B3B",
-        "primary-100": "#A259FF",
-        "primary-200": "",
+        primary: '#2B2B2B',
+        secondary: '#3B3B3B',
+        'primary-100': '#A259FF',
+        'primary-200': ''
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        fontMono: ["Space Mono", "mono-space"]
+        sans: ['Inter', 'sans-serif'],
+        fontMono: ['Space Mono', 'mono-space']
       },
       screens: {
-        xs: "480px",
-        ss: "620px",
-        sm: "768px",
-        md: "1060px",
-        lg: "1200px",
-        xl: "1700px",
+        xs: '480px',
+        ss: '620px',
+        sm: '768px',
+        md: '1060px',
+        lg: '1200px',
+        xl: '1700px'
       }
-    },
+    }
   },
-  plugins: [],
-};
+  plugins: []
+}
 ```
 
 ### Landing Page Styling
 
-For the Landing Page styling, please refer to the `HomeView` component in the `Views` folder. Here’s a snippet of the code:
+For the Landing Page styling, refer to the `HomeView` component in the `Views` folder. Here’s a snippet of the code:
 
 ```html
 <script setup lang="ts">
-import { Menu, RocketLaunch } from '@/assets'
-import { Features } from '@/constants'
-import { ref } from 'vue'
-import CardView from '../components/CardView.vue'
+  import { Menu, RocketLaunch } from '@/assets'
+  import { Features } from '@/constants'
+  import { ref } from 'vue'
+  import CardView from '../components/CardView.vue'
 
-const styles = 'flex justify-between items-center'
-const toggler = ref(false)
+  const styles = 'flex justify-between items-center'
+  const toggler = ref(false)
 
-const handleToggle = () => {
-  toggler.value = !toggler.value
-}
+  const handleToggle = () => {
+    toggler.value = !toggler.value
+  }
 </script>
 
 <template>
@@ -94,8 +91,17 @@ const handleToggle = () => {
 
       <!-- FEATURES CONTENT -->
       <section class="flex justify-center items-center max-md:flex-col gap-[20px]">
-        <div v-for="(feature, index) in Features" :key="index" class="flex items-center max-md:mb-3">
-          <CardView :description="feature.description" :icon="feature.icons" :title="feature.title" :id="feature.title + index" />
+        <div
+          v-for="(feature, index) in Features"
+          :key="index"
+          class="flex items-center max-md:mb-3"
+        >
+          <CardView
+            :description="feature.description"
+            :icon="feature.icons"
+            :title="feature.title"
+            :id="feature.title + index"
+          />
         </div>
       </section>
 
@@ -107,10 +113,10 @@ const handleToggle = () => {
 <style scoped></style>
 ```
 
-For more information on the `CardView` component, refer to [`./components/CardView.vue`](./components/CardView.vue).
+### Additional Information
 
-The `./tailwind.config.js` link will work as long as the `README.md` and `tailwind.config.js` file are in the same directory.
+For more details on the `CardView` component, refer to [`./components/CardView.vue`](./components/CardView.vue). The other components in the `components` directory contribute to various sections of the application, and an FAQ link will trigger a modal with project details (currently under development).
+
+The [`./tailwind.config.js`](./tailwind.config.js) link will work as long as the `README.md` and `tailwind.config.js` file are in the same directory.
 
 ---
-
-This version improves readability and removes any redundant or misplaced punctuation. Let me know if there are any additional tweaks you’d like!
