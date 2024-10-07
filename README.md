@@ -1,39 +1,52 @@
-# zenotes-project
 
-This template should help get you started developing with Vue 3 in Vite.
+---
 
-## Recommended IDE Setup
+# Zenotes Frontend
+This is the frontend UI configuration of the Zenotes Project done by Abdiel Wilson, and the rest of Team Zenote.....
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Tailwind Configuration
 
-## Type Support for `.vue` Imports in TS
+This project utilizes a custom [`tailwind.config.js`](./tailwind.config.js) file to manage Tailwind CSS configurations. This configuration file defines custom themes, colors, spacing, and responsive breakpoints used throughout the project.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+### Copying the Tailwind Configuration
 
-## Customize configuration
+```javascript
+// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{vue,js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#2B2B2B",
+        "secondary": "#3B3B3B",
+        "primary-100": "#A259FF",
+        "primary-200": "",
+      },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+        fontMono: ["Space Mono", "mono-space"]
+      },
+      screens: {
+        xs: "480px",
+        ss: "620px",
+        sm: "768px",
+        md: "1060px",
+        lg: "1200px",
+        xl: "1700px",
+      }
+    },
+  },
+  plugins: [],
+}
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Then Copy All The Styling from the Components Area
 
-## Project Setup
 
-```sh
-npm install
-```
 
-### Compile and Hot-Reload for Development
+---
 
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+The `./tailwind.config.js` link will work as long as the `README.md` and `tailwind.config.js` file are in the same directory.
