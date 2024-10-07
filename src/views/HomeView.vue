@@ -60,11 +60,9 @@ const handleToggle = () => {
           />
         </div>
       </section>
-    </main>
 
-    <footer class="text-white text-center m-10">
-      <p>All Rights Reserved. 2024 Zenotes.</p>
-    </footer>
+      <p class="text-center mt-10">All Rights Reserved. 2024 Zenotes.</p>
+    </main>
   </body>
 </template>
 
